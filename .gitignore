@@ -111,3 +111,12 @@ visualizers/output
 
 # Non public experiments
 private_examples
+
+# Do not add any keys
+*.key
+
+# No venv
+.cvrpvenv
+
+# No vscode folder
+.vscode
