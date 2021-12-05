@@ -32,7 +32,7 @@ except ImportError:
           "Relying on internal TSP solver and the results may differ from those that were published.", file=stderr)
     from tsp_solvers.tsp_solver_ropt import solve_tsp_ropt as solve_tsp
 
-from util import sol2routes, routes2sol, totald, objf
+from cvrp_util import sol2routes, routes2sol, totald, objf
 
 from config import CAPACITY_EPSILON as C_EPS
 from config import COST_EPSILON as S_EPS

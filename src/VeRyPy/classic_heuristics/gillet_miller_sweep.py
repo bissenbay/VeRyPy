@@ -27,7 +27,7 @@ from logging import log, DEBUG
 from orderedset import OrderedSet
 
 from routedata import RouteData
-from util import produce_nn_list
+from cvrp_util import produce_nn_list
 from classic_heuristics.sweep import _step,sweep_init,BEST_ALTERNATIVE
 
 from config import CAPACITY_EPSILON as C_EPS

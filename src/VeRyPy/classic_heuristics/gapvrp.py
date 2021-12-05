@@ -39,7 +39,7 @@ except ImportError:
 
 from classic_heuristics.sweep import get_sweep_from_cartesian_coordinates, bisect_angle
 from cvrp_io import calculate_D
-from util import is_better_sol, totald
+from cvrp_util import is_better_sol, totald
 from config import MAX_MIP_SOLVER_RUNTIME, MIP_SOLVER_THREADS
 from config import CAPACITY_EPSILON as C_EPS
 from config import COST_EPSILON as S_EPS
@@ -416,7 +416,7 @@ def _end_of_thoroughfares_seed_points(points, D, d, C, K, trial=0):
     """
     
     from sklearn.cluster import DBSCAN
-    from util import produce_nn_list
+    from cvrp_util import produce_nn_list
     
     # use a heuristic to get eps that finds all 2. closest nodes and 
     #  uses the median distance of those as the eps

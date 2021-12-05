@@ -22,7 +22,7 @@ from builtins import range
 from itertools import groupby
 from time import time
 
-from util import objf
+from cvrp_util import objf
 from local_search import LSOPT
 from cvrp_ops import fast_constraint_check
 

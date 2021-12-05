@@ -9,7 +9,7 @@ printing the resulting solution route by route."""
 
 import cvrp_io
 from classic_heuristics.parallel_savings import parallel_savings_init
-from util import sol2routes
+from VeRyPy.cvrp_util import sol2routes
 
 E_n51_k5_path = r"E-n51-k5.vrp"
 

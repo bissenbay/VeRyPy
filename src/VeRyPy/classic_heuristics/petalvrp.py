@@ -28,7 +28,7 @@ from classic_heuristics.sweep import do_one_sweep, get_sweep_from_cartesian_coor
 #from local_search import ITEROPT
 from tsp_solvers.tsp_solver_fast import solve_tsp_fast as solve_tsp  
 #from tsp_solvers.tsp_solver_gurobi import solve_tsp_gurobi as solve_tsp
-from util import objf, totald, routes2sol, without_empty_routes, is_better_sol
+from cvrp_util import objf, totald, routes2sol, without_empty_routes, is_better_sol
 from routedata import RouteData
 
 from local_search.inter_route_operators import do_redistribute_move

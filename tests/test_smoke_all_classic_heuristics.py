@@ -12,7 +12,7 @@ import unittest
 from scipy.spatial.distance import pdist, squareform
 
 from cvrp_ops import check_solution_feasibility, D2D_c
-from util import objf
+from cvrp_util import objf
 
 SMOKE_TEST_VERBOSITY = 0
 

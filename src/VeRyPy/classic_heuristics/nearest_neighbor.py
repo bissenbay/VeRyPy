@@ -20,7 +20,7 @@ from __future__ import division
 from logging import log, DEBUG
 from operator import itemgetter
 from collections import deque
-from util import objf, without_empty_routes, is_better_sol, routes2sol
+from cvrp_util import objf, without_empty_routes, is_better_sol, routes2sol
 
 from config import CAPACITY_EPSILON as C_EPS
 from config import COST_EPSILON as S_EPS

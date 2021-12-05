@@ -21,7 +21,7 @@ from builtins import range
 from logging import log, DEBUG
 
 from classic_heuristics.parallel_savings import parallel_savings_init
-from util import objf, is_better_sol
+from cvrp_util import objf, is_better_sol
 
 __author__ = "Jussi Rasku"
 __copyright__ = "Copyright 2018, Jussi Rasku"

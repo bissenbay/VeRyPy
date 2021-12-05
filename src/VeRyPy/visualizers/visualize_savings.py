@@ -2,7 +2,7 @@
 
 import re
 from shared_visualize import visualize_cli, visualize_procedure, VISUALIZE
-from util import sol2routes
+from cvrp_util import sol2routes
 
 MAKE_ANIM = True
 SHOW_INFEASIBLE = True

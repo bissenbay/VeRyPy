@@ -17,9 +17,9 @@ import logging
 
 from natsort import natsorted
 
-import cvrp_ops
-import cvrp_io
-from util import objf, sol2routes, is_better_sol
+import cvrp_ops as ops
+import cvrp_io as io
+from cvrp_util import objf, sol2routes, is_better_sol
 from config import DEBUG_VERBOSITY as DEFAULT_DEBUG_VERBOSITY
 
 def print_problem_information(points, D, d, C, L, service_time, tightness=None, verbosity=0):
@@ -44,8 +44,8 @@ def print_problem_information(points, D, d, C, L, service_time, tightness=None, 
 def print_solution_statistics(sol, D, D_cost, d, C, L=None, service_time=None,
                               verbosity=-1):
     print("\nSOLUTION:", sol)
-    cover_ok,capa_ok,rlen_ok = cvrp_ops.check_solution_feasibility(
-                                          sol, D_cost,d,C,L,True)
+    cover_ok,capa_ok,rlen_ok = \
+        ops.check_solution_feasibility(sol, D_cost,d,C,L,True)
     
     if verbosity>1:
         print("ALL SERVED:", cover_ok)   
@@ -92,17 +92,17 @@ def read_and_solve_a_problem(problem_instance_path, with_algorithm_function,
     for different algorithms) is made."""
     
     pfn = problem_instance_path
-    N, points, dd_points, d, D, C, ewt = cvrp_io.read_TSPLIB_CVRP(pfn)
-    required_K, L, st = cvrp_io.read_TSBLIB_additional_constraints(pfn)
+    _, points, dd_points, d, D, C, ewt = io.read_TSPLIB_CVRP(pfn)
+    required_K, L, st = io.read_TSBLIB_additional_constraints(pfn)
     
     # model service time with the distance matrix
-    D_c = cvrp_ops.D2D_c(D, st) if st else D
+    D_c = ops.D2D_c(D, st) if st else D
         
     if points is None:
         if dd_points is not None:
             points = dd_points
         else:
-            points, ewt = cvrp_ops.generate_missing_coordinates(D)
+            points, ewt = ops.generate_missing_coordinates(D)
 
     tightness = None
     if C and required_K:
@@ -131,7 +131,7 @@ def read_and_solve_a_problem(problem_instance_path, with_algorithm_function,
         elapsed = time()-start 
         
         if sol:      
-            sol = cvrp_ops.normalize_solution(sol)
+            sol = ops.normalize_solution(sol)
             sol_f = objf(sol, D_c)
             sol_K = sol.count(0)-1
             if is_better_sol(best_f, best_K, sol_f, sol_K, minimize_K):
@@ -148,7 +148,7 @@ def read_and_solve_a_problem(problem_instance_path, with_algorithm_function,
             break
             
     if verbosity>=0 and best_sol:
-        n_best_sol = cvrp_ops.normalize_solution(best_sol)
+        n_best_sol = ops.normalize_solution(best_sol)
         print_solution_statistics(n_best_sol, D, D_c, d, C, L, st, verbosity=verbosity)
     
     if interrupted:
@@ -219,11 +219,8 @@ def enable_function_tracing():
     sys.setprofile(tracefunc)
 
 def tsp_cli(tsp_f_name, tsp_f):
-    # import here so that the function can be used without these dependencies
-    from util import objf
-    
     if len(sys.argv)==2 and path.isfile(sys.argv[1]):
-        P = cvrp_io.read_TSPLIB_CVRP(sys.argv[1])
+        P = io.read_TSPLIB_CVRP(sys.argv[1])
         D = P.distance_matrix
         start_t = time()
         tsp_sol, tsp_f = tsp_f(D, list(range(len(D))))
@@ -273,7 +270,7 @@ def cli(init_name, init_desc, init_f):
     if sys.argv[-1].isdigit():        
         N = int(sys.argv[-1])
         problem_name = "random "+str(N)+" point problem"
-        N, points, _, d, D, C,_ = cvrp_io.generate_CVRP(N, 100, 20, 5)
+        N, points, _, d, D, C,_ = io.generate_CVRP(N, 100, 20, 5)
         d = [int(de) for de in d]
         D_c = D
         L,st = None, None
@@ -294,7 +291,7 @@ def cli(init_name, init_desc, init_f):
                 if len(e.args)>0 and type(e.args[0]) is list:
                     sol = e.args[0]
             if sol:      
-                sol = cvrp_ops.normalize_solution(sol)
+                sol = ops.normalize_solution(sol)
                 sol_f = objf(sol, D_c)
                 sol_K = sol.count(0)-1
                 

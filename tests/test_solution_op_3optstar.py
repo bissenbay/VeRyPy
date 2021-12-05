@@ -21,7 +21,7 @@ from classic_heuristics.nearest_neighbor import nearest_neighbor_init
 
 from cvrp_io import generate_CVRP
 from cvrp_ops import check_solution_feasibility, calculate_objective
-from util import sol2routes, routes2sol
+from cvrp_util import sol2routes, routes2sol
 from test_intra_route_local_search_operation import Test3Opt
 
 PRINT_ONLY_FINAL_RESULT = True

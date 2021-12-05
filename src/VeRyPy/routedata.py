@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from util import sol2routes, objf
+from cvrp_util import sol2routes, objf
 
 class RouteData:
     def __init__(self, route=None, cost=0.0, demand=0.0, node_set=None,

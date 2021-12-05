@@ -19,7 +19,7 @@ from classic_heuristics.parallel_savings import parallel_savings_init
 import numpy as np
 from local_search import LSOPT, do_local_search
 from local_search.intra_route_operators import do_3opt_move 
-from util import objf, without_empty_routes, is_better_sol
+from cvrp_util import objf, without_empty_routes, is_better_sol
 
 __author__ = "Jussi Rasku"
 __copyright__ = "Copyright 2018, Jussi Rasku"

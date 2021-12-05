@@ -13,8 +13,7 @@ from local_search.intra_route_operators import do_2opt_move, do_3opt_move,\
 from cvrp_io import generate_CVRP
 
 # Helpers, so simple that they are sure to work right
-from util import routes2sol, sol2routes
-from util import objf
+from cvrp_util import routes2sol, sol2routes, objf
 
 def set_weight(D,n1,n2,wt):
     """ A helper shorthand to set the symmetric distance matrix weights. This

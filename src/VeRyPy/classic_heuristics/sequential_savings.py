@@ -17,7 +17,7 @@ from __future__ import print_function
 from __future__ import division
 
 from logging import log, DEBUG
-from util import objf, routes2sol
+from cvrp_util import objf, routes2sol
 
 from collections import deque
 

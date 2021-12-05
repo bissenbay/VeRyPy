@@ -19,7 +19,7 @@ from __future__ import division
 from builtins import range
 
 from logging import log, DEBUG
-from util import routes2sol, objf
+from cvrp_util import routes2sol, objf
 from config import CAPACITY_EPSILON as C_EPS
 from config import COST_EPSILON as S_EPS
 

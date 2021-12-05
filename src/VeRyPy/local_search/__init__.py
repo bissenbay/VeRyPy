@@ -16,7 +16,7 @@ from itertools import permutations
 from inspect import getargspec
 
 from routedata import RouteData
-from util import objf, is_sorted
+from cvrp_util import objf, is_sorted
 from config import COST_EPSILON as S_EPS
 
 # enum like

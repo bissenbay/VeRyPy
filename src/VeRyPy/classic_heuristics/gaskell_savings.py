@@ -16,7 +16,7 @@ for reading and preparing the problem instance."""
 from builtins import range
 
 import numpy as np
-from util import objf, is_better_sol
+from cvrp_util import objf, is_better_sol
 from classic_heuristics.parallel_savings import parallel_savings_init
 
 __author__ = "Jussi Rasku"

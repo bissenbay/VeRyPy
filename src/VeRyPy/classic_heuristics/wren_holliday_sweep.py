@@ -31,7 +31,7 @@ from local_search.intra_route_operators import do_2opt_move, do_relocate_move
 from local_search.inter_route_operators import do_1point_move, do_chain_move,\
                                                do_insert_move,do_redistribute_move
 
-from util import objf, without_empty_routes, is_better_sol
+from cvrp_util import objf, without_empty_routes, is_better_sol
 
 from config import COST_EPSILON as S_EPS
 from config import CAPACITY_EPSILON as C_EPS

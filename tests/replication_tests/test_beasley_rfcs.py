@@ -7,7 +7,7 @@ from tsp_solvers.tsp_solver_ropt import solve_tsp_ropt
 from tsp_solvers.tsp_solver_gurobi import solve_tsp_gurobi as solve_tsp_giant_tour
 #from tsp_solvers.tsp_solver_lkh import solve_tsp_lkh as solve_tsp_giant_tour
 
-from util import objf
+from cvrp_util import objf
 import unittest
 from os import path
 

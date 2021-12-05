@@ -36,7 +36,7 @@ except ImportError:
 from cvrp_ops import fast_constraint_check, calculate_objective, normalize_solution
 from local_search.solution_operators import do_3optstar_move
 from local_search import LSOPT
-from util import without_empty_routes, sol2routes, routes2sol
+from cvrp_util import without_empty_routes, sol2routes, routes2sol
 from config import COST_EPSILON as S_EPS
 from config import CAPACITY_EPSILON as C_EPS
 

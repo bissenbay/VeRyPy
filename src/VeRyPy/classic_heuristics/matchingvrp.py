@@ -36,7 +36,7 @@ except ImportError:
           "Relying on internal TSP solver and the results may differ from those that were published.", file=stderr)
     from tsp_solvers.tsp_solver_ropt import solve_tsp_ropt as default_solve_tsp
 
-from util import objf
+from cvrp_util import objf
 
 from config import MAX_MIP_SOLVER_RUNTIME, MIP_SOLVER_THREADS
 from config import COST_EPSILON as S_EPS

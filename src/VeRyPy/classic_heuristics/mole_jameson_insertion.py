@@ -24,7 +24,7 @@ from local_search import LSOPT, do_local_search
 from local_search.intra_route_operators import do_2opt_move
 from local_search.inter_route_operators import do_1point_move,\
                                                do_redistribute_move
-from util import objf, without_empty_routes, is_better_sol
+from cvrp_util import objf, without_empty_routes, is_better_sol
 from routedata import RouteData
 from config import COST_EPSILON as S_EPS
 

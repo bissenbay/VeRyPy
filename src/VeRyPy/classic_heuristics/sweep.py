@@ -28,7 +28,7 @@ import numpy as np
 #  order the nodes are added during the sweep).
 from orderedset import OrderedSet
 
-from util import objf, without_empty_routes, is_better_sol
+from cvrp_util import objf, without_empty_routes, is_better_sol
 from routedata import RouteData
 
 from config import CAPACITY_EPSILON as C_EPS

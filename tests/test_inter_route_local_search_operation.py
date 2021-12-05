@@ -15,9 +15,9 @@ from local_search.inter_route_operators import do_2optstar_move,\
 from routedata import RouteData
 
 # Helpers, so simple that they are sure to work right
-from util import routes2sol, sol2routes
-from util import objf as route_l
-from util import totald as route_d
+from cvrp_util import routes2sol, sol2routes
+from cvrp_util import objf as route_l # use a shorthand for clarity
+from cvrp_util import totald as route_d # use a shorthand for clarity
 
 def set_weight(D,n1,n2,wt):
     """ A helper shorthand to set the symmetric distance matrix weights. This

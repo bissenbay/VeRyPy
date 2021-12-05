@@ -91,9 +91,9 @@ $ python -O VeRyPy.py -a all E-n51-k5.vrp
 
 An an alternative way of using VeRyPy, this simple Python code illustrates the API usage:
 ```python
-import cvrp_io
-from classic_heuristics.parallel_savings import parallel_savings_init
-from util import sol2routes
+import VeRyPy.cvrp_io
+from VeRyPy.classic_heuristics.parallel_savings import parallel_savings_init
+from VeRyPy.cvrp_util import sol2routes
 
 E_n51_k5_path = r"E-n51-k5.vrp"
 

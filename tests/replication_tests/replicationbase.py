@@ -8,7 +8,7 @@ from time import time
 
 import numpy as np
 
-from util import objf, without_empty_routes
+from cvrp_util import objf, without_empty_routes
 from shared_cli import print_solution_statistics
 from cvrp_ops import check_solution_feasibility
 import cvrp_io

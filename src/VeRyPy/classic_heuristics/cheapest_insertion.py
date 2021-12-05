@@ -20,7 +20,7 @@ from collections import namedtuple
 from heapq import heappush, heappop
 from logging import log, DEBUG
 
-from util import objf, routes2sol
+from cvrp_util import objf, routes2sol
 from config import COST_EPSILON as S_EPS
 from config import CAPACITY_EPSILON as C_EPS
 
