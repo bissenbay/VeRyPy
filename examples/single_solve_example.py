@@ -7,13 +7,15 @@ TSPLIB formatted problem instance file with a single heuristic algorithm and
 printing the resulting solution route by route."""
 ###############################################################################
 
-import cvrp_io
-from classic_heuristics.parallel_savings import parallel_savings_init
+import os
+from VeRyPy.cvrp_io import read_TSPLIB_CVRP
+from VeRyPy.classic_heuristics.parallel_savings import parallel_savings_init
 from VeRyPy.cvrp_util import sol2routes
 
-E_n51_k5_path = r"E-n51-k5.vrp"
+E_n51_k5_path = r"E-n51-k5.vrp" if 'examples' in os.getcwd()\
+                                else r"examples/E-n51-k5.vrp"
 
-problem = cvrp_io.read_TSPLIB_CVRP(E_n51_k5_path)
+problem = read_TSPLIB_CVRP(E_n51_k5_path)
 
 solution = parallel_savings_init(
     D=problem.distance_matrix, 

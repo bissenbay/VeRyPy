@@ -164,9 +164,9 @@ def main(args):
 
     ## Solve the related CVRP using VeRyPy ##
     if args.C:
+        #import sys; print(sys.path); Ugh, remember to set your PYTHON_PATH
         from VeRyPy.cvrp_util import sol2routes
         from VeRyPy.classic_heuristics.parallel_savings import parallel_savings_init
-        
 
         if locations:
             d = [loc["demand"] for loc in locations]
@@ -186,9 +186,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    import VeRyPy.classic_heuristics.parallel_savings
-    exit(VeRyPy.classic_heuristics.parallel_savings)
-
+    
     ## CLI specification ##
     parser = argparse.ArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group(required=True)
